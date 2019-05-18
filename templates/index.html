@@ -17,7 +17,7 @@
   <div class="container">
 
     <div class="jumbotron text-center">
-      <h1>Mission to Mars</h1>
+      <h1 class='display-2'>Mission to Mars</h1>
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Click here to scrape new data</a></p>
     </div>
   </div>
@@ -25,36 +25,41 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h2>NEWS ARTICLES</h2>
+        <h2 class='display-4'>NEWS ARTICLES</h2>
         <br>
         <h3>{{mars_data['news'][0]['title']}}</h3>
-        <p>{{mars_data['news'][0]['p']}} </p>
+        <p class='lead'>{{mars_data['news'][0]['p']}} </p>
       </div>
     </div>
-    
+  </div>
+  <hr>
+  <div class="container">    
     <div class="row">
       <div class="col-md-8">
-        <h2>FEATURED IMAGE</h2>
+        <h2 class='display-4'>FEATURED IMAGE</h2>
         <br>
-        <img src={{ mars_data.image }} height=700px width=700px >
+        <img src={{ mars_data.image }} class="img-fluid" alt="Responsive image">
       </div>
       <div class="col-md-4">
           <div class="row">
-            <h2>CURRENT WEATHER</h2>
+            <h2 class='display-4'>CURRENT WEATHER</h2>
             <br>
-             <p> {{ mars_data.weather }}</p>
+             <p class=''> {{ mars_data.weather }}</p>
           </div>
+          
           <div class='row'>
             <div>  
-              <h2>MARS FACTS</h2>
+              <h2 class='display-4'>MARS FACTS</h2>
               {{mars_data['facts']|safe}}
             </div>
           </div>
       </div>
-  
+  </div>
+  <hr>
+  <div class='container'
     <div class="row">
       <div class="col-md-12" align="center">
-        <h2>MARS HEMISPHERES</h2>
+        <h2 class='display-4'>MARS HEMISPHERES</h2>
       
     </div>
 
