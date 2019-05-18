@@ -34,7 +34,7 @@ def scrape():
     weather_html = requests.get(weather_url)
     weather_soup = BeautifulSoup(weather_html.text)
     mars_weather_all = weather_soup.find_all('p', class_='TweetTextSize')
-    mars_weather = mars_weather_all[1].text.replace ('\n', ', ')
+    mars_weather = mars_weather_all[0].text.replace ('\n', ', ')
     mars_weather = mars_weather[:-26]
     mars_data['weather'] = mars_weather
 
