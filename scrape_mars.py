@@ -23,9 +23,9 @@ def scrape():
     browser = Browser('chrome', **executable_path, headless=False)
     url = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
     browser.visit(url)
+    browser.click_link_by_partial_text('FULL IMAGE')
     picture_html = browser.html
     picture_soup = BeautifulSoup(picture_html, 'html.parser')
-    browser.click_link_by_partial_text('FULL IMAGE')
     part_url = picture_soup.find_all('a', class_='button fancybox')[0].get('data-fancybox-href')
     image_url = 'https://www.jpl.nasa.gov' + part_url
     mars_data['image'] = image_url
