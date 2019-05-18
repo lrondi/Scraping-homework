@@ -44,8 +44,7 @@ def scrape():
     mars_facts_table = pd.read_html(facts_url)
     mars_facts_table = mars_facts_table[0].rename(columns={0:'Mars profile', 1: ''})
     mars_facts_table = mars_facts_table.set_index('Mars profile')
-    mars_facts = mars_facts_table.to_html()
-    #mars_facts = mars_facts.replace('\n','')
+    mars_facts = mars_facts_table.to_html(header=False)
     mars_data['facts'] = mars_facts
 
     hemisphere_image_url = [{'title':'Cerberus hemisphere', 'img_url':'https://astrogeology.usgs.gov/cache/images/cfa62af2557222a02478f1fcd781d445_cerberus_enhanced.tif_full.jpg'},

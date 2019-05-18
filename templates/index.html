@@ -35,30 +35,47 @@
   <hr>
   <div class="container">    
     <div class="row">
-      <div class="col-md-8">
+
+      <div class="col-md-8 vertical-center">
         <h2 class='display-4'>FEATURED IMAGE</h2>
         <br>
-        <img src={{ mars_data.image }} class="img-fluid" alt="Responsive image" width=700px height=1000px>
+        <img src={{ mars_data.image }} class="img-fluid" alt="Responsive image" >
+        <!-- width=700px height=1000px -->
       </div>
+
       <div class="col-md-4">
-          <div class="row">
-            <h2 class='display-4 text-right'>CURRENT WEATHER</h2>
-            <br>
-             <p class='lead text-right'> {{ mars_data.weather }}</p>
-          </div>
-          
-          <div class='row'> 
-              <h2 class='display-4 text-right'>MARS FACTS</h2>
-              <table>{{mars_data['facts']|safe}}</table>
+          <h2 class='display-4 text-right'>MARS IN NUMBERS</h2>
+          <div class='container'>
+            <table>{{mars_data['facts']|safe}}</table>
           </div>
       </div>
+
+    </div>
+
   </div>
+
   <hr>
-  <div class='container'
+  <div class='container'>
+    
+    <div class='row'>
+      <div class='col-md-12' align='center'>
+          <h2 class='display-4'>CURRENT WEATHER</h2>
+      </div>
+    </div>
+
+    <div class='row'>
+        <p class='lead text-center'> {{ mars_data.weather }}</p>
+    </div>
+  
+  </div>
+  
+  <hr>
+
+  <div class='container' align='center'>
     <div class="row">
       <div class="col-md-12" align="center">
         <h2 class='display-4'>MARS HEMISPHERES</h2>
-      
+      </div>
     </div>
 
     <div class="row">
